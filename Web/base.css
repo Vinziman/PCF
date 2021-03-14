@@ -1,0 +1,17 @@
+body{
+    background-color:royalblue;
+}
+.filtri{
+    position: absolute;
+    top:120px;
+    border-radius: 15px;
+    background: white;
+    width: 180px;
+    height: auto;
+    text-align: center;
+}
+/*stile componenti della classe filtri*/
+#specifiche{
+    font-size: 20px;
+    font-weight: bold;
+}

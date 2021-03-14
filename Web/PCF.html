@@ -1,10 +1,44 @@
 <html>
     <head>
         <title></title>
-        <style></style>
-        <style></style>
+        <link rel="stylesheet" href="corpo.css">
+        <link rel="stylesheet" href="base.css">
     </head>
     <body>
-        
+        <div class="filtri">
+            <form action method="POST" href="mio.html">
+                <!--Scrittura dei filtri-->
+                <div id="specifiche">
+                    SO<br>
+                    <input type="checkbox" value="Win10">Win10<br>
+                    <input type="checkbox" value="Mac_Os">Mac Os<br>
+                    <input type="checkbox" value="Chrome">Chrome<br>
+                    <input type="checkbox" value="Linux">Linux<br>
+                </div>
+                <div id="specifiche">
+                    Ram<br>
+                    <input type="checkbox" value="4GB">4 GB<br>
+                    <input type="checkbox" value="Mac_Os">8 GB<br>
+                    <input type="checkbox" value="Chrome">12 GB<br>
+                    <input type="checkbox" value="Linux">12+ GB<br>
+                </div>
+                <div id="specifiche">
+                    CPU<br>
+                    <input type="checkbox" value="4GB">Intel<br>
+                    <input type="checkbox" value="Mac_Os">AMD<br>
+                </div>
+                <div id="specifiche">
+                    GPU<br>
+                    <input type="checkbox" value="4GB">Nvidia<br>
+                    <input type="checkbox" value="Mac_Os">AMD<br>
+                </div>
+                <div id="specifiche">
+                    Prezzo<br>
+                    Min: <input type="number" min="0" max="5000" step="50" value="400"><br>
+                    Max: <input type="number" min="0" max="5000" step="50" value="700"><br>
+                </div>
+                <button>Applica</button>
+        </form>
+        </div>
     </body>
 </html>
