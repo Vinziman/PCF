@@ -1,17 +1,114 @@
 body{
     background-color:royalblue;
 }
+/*filtri*/
 .filtri{
     position: absolute;
     top:120px;
+    left: 10px;
     border-radius: 15px;
     background: white;
     width: 180px;
     height: auto;
     text-align: center;
 }
+
 /*stile componenti della classe filtri*/
 #specifiche{
     font-size: 20px;
     font-weight: bold;
+}
+
+/*Area di interazione*/
+.areapc{
+    position:absolute;
+    height: 500px;
+    width: 800px;
+    background: white;
+    border: inset 3px #c0c0c0;
+    left: 50%;
+    top: 50%;
+    margin: -250px 0 0 -400px;
+    border-radius: 15px;
+}
+/*bottoni d'intezione superiori*/
+#latodx{
+    top:5px;
+    position: absolute;
+    right: 0;
+    width: 33.3%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#latosx{
+    top:5px;
+    position: absolute;
+    left: 0;
+    width: 33.3%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#home{
+    top:5px;
+    position: absolute;
+    left: 33.3%;
+    width: 33.3%;
+}
+/*bottoni inferiori*/
+#buttonpc{
+    position: relative;
+    top:100px;
+    left:100px;
+    background: none;
+    border: ridge 2px;
+    border-radius: 15px;
+    width: 300px;
+    height: 200px;
+}
+#size{
+    margin-top:0;
+    width: 250px;
+    height: 150px;
+}
+/* form ricerca pc*/
+.sezionericerca{
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    height: 40px;
+    width: 250px;
+    font-size: 24px;
+}
+#barraricerca{
+    position: absolute;
+    right: 0;
+    border-radius: 8px;
+    height: 35px;
+    width: 220px;
+    background-color: azure;
+}
+/*utente*/
+.areautente{
+    position: absolute;
+    top:15px;
+    left:10px;
+    width: 175px;
+    height: 55px;
+    border-radius: 15px;
+    background-color: aliceblue;
+}
+#image{
+    position: absolute;
+    top: 2.5px;
+    left: 13px;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: black;
+}
+#dati{
+    position: absolute;
+    top:5px;
+    left: 85px;
+
 }
