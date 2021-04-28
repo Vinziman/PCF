@@ -8,12 +8,12 @@
             <!-- Icona -->
         <!--Area utente-->
         <div class="areautente">
-            <img id="image" src="guest.png"/>
+            <img id="image"/>
             <div id="dati">
-                <a href="">Accedi</a><br>
-                <a href="">Registrati</a>
+                <a href=""></a><br>
+                <a href=""></a>
             </div>
-            <!-- <a href="Profilo.php" id="view">visita</a> -->
+            <a href="Profilo.php" id="view">visita</a>
         </div>
         <!--Scelta dei filtri-->
         <div class="filtri">
