@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 28, 2021 alle 18:51
+-- Creato il: Mag 06, 2021 alle 11:08
 -- Versione del server: 10.4.18-MariaDB
 -- Versione PHP: 8.0.3
 
@@ -67,6 +67,68 @@ INSERT INTO `pc` (`id`, `marca`, `modello`, `so`, `ram`, `cpu`, `gpu`, `tipo_mem
 (55, 'HP', 'HP 255 G8', 'Windows 10 Pro', 8, 'AMD Athlon 3020e', 'AMD Radeon', 'SSD', 256, 538, 0, '', 'https://www.amazon.it/HP-255-G8-portatile-Bluetooth/dp/B08TQH1PN5/ref=sr_1_2_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hp+255+G8&qid=1617785421&sr=8-2-spons&psc=1&smid=A8S1KWNUMXYCT&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFGNllLSEY1RFhPNkgmZW5jcnlwdGVkSWQ9QTAxMjg2OTRBVzNKWDVBRVRVUkQmZW5jcnlwdGVkQWRJZD1BMDk4OTQ3NTM1N1c2NkFJV1o1RFUmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl', '', 0, 0, 0),
 (56, 'HP', 'HP 255 G7', 'Windows 10 Pro', 8, 'AMD Athlon Silver 30', 'AMD Radeon R3', 'SSD', 256, 594.9, 0, '', 'https://www.amazon.it/Notebook-Portatile-Display-Masterizzatore-Bluetooth/dp/B07SZ74WMQ/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hp+255+g7&qid=1617787931&sr=8-1-spons&psc=1&smid=A3CZYQKI1SOFSO&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExTklOTE1KSjRYVU9EJmVuY3J5cHRlZElkPUExMDI1MzAwM1E1SjZJTzhEQVI0NyZlbmNyeXB0ZWRBZElkPUEwODU5ODYzMTRVQjAxWjRaVVZORCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=', '', 0, 0, 0),
 (57, 'HP', 'HP 255 G7', 'Windows 10 Pro', 8, 'AMD A4', 'AMD Radeon R3', 'SSD', 500, 599.99, 0, '', 'https://www.amazon.it/255-portatile-Bluetooth-professional-Antivirus/dp/B08KSJFSJC/ref=sr_1_4_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hp+255+g7&qid=1617787931&sr=8-4-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExTklOTE1KSjRYVU9EJmVuY3J5cHRlZElkPUExMDI1MzAwM1E1SjZJTzhEQVI0NyZlbmNyeXB0ZWRBZElkPUEwNjMxMjYyMlNNQzc3VEdCVUZIRCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=', '', 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `pcutente`
+--
+
+CREATE TABLE `pcutente` (
+  `cf` varchar(16) NOT NULL,
+  `id` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `utente`
+--
+
+CREATE TABLE `utente` (
+  `cf` varchar(16) NOT NULL,
+  `nome` varchar(30) NOT NULL,
+  `cognome` varchar(30) NOT NULL,
+  `datanascita` date NOT NULL,
+  `comuneresidenza` varchar(30) NOT NULL,
+  `comunenascita` varchar(30) NOT NULL,
+  `mail` varchar(30) NOT NULL,
+  `password` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indici per le tabelle scaricate
+--
+
+--
+-- Indici per le tabelle `pc`
+--
+ALTER TABLE `pc`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indici per le tabelle `pcutente`
+--
+ALTER TABLE `pcutente`
+  ADD PRIMARY KEY (`cf`,`id`),
+  ADD KEY `id` (`id`);
+
+--
+-- Indici per le tabelle `utente`
+--
+ALTER TABLE `utente`
+  ADD PRIMARY KEY (`cf`);
+
+--
+-- Limiti per le tabelle scaricate
+--
+
+--
+-- Limiti per la tabella `pcutente`
+--
+ALTER TABLE `pcutente`
+  ADD CONSTRAINT `pcutente_ibfk_1` FOREIGN KEY (`cf`) REFERENCES `utente` (`cf`),
+  ADD CONSTRAINT `pcutente_ibfk_2` FOREIGN KEY (`id`) REFERENCES `pc` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
