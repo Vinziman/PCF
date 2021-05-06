@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 06, 2021 alle 11:08
+-- Creato il: Mag 06, 2021 alle 11:15
 -- Versione del server: 10.4.18-MariaDB
 -- Versione PHP: 8.0.3
 
@@ -76,7 +76,8 @@ INSERT INTO `pc` (`id`, `marca`, `modello`, `so`, `ram`, `cpu`, `gpu`, `tipo_mem
 
 CREATE TABLE `pcutente` (
   `cf` varchar(16) NOT NULL,
-  `id` int(3) NOT NULL
+  `id` int(3) NOT NULL,
+  `dataricerca` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -110,8 +111,7 @@ ALTER TABLE `pc`
 -- Indici per le tabelle `pcutente`
 --
 ALTER TABLE `pcutente`
-  ADD PRIMARY KEY (`cf`,`id`),
-  ADD KEY `id` (`id`);
+  ADD PRIMARY KEY (`cf`,`id`,`dataricerca`);
 
 --
 -- Indici per le tabelle `utente`
@@ -127,8 +127,7 @@ ALTER TABLE `utente`
 -- Limiti per la tabella `pcutente`
 --
 ALTER TABLE `pcutente`
-  ADD CONSTRAINT `pcutente_ibfk_1` FOREIGN KEY (`cf`) REFERENCES `utente` (`cf`),
-  ADD CONSTRAINT `pcutente_ibfk_2` FOREIGN KEY (`id`) REFERENCES `pc` (`id`);
+  ADD CONSTRAINT `pcutente_ibfk_1` FOREIGN KEY (`cf`) REFERENCES `utente` (`cf`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
