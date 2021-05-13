@@ -1,61 +1,78 @@
 body{
     background-color:rgb(0, 148, 236);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-
 }
 /*filtri*/
 .filtri{
     position: absolute;
-    top:120px;
+    top:115px;
     left: 20px;
     border-radius: 15px;
     border: 2px ridge rgb(202, 202, 202);
     background: white;
     width: 180px;
-    height: auto;
-    /* box-shadow: 3px 2px blue; */
+    height: 540px;
+}
+/*stile componenti della classe filtri*/
+#specifiche{
+    font-size: 17px;
 }
 #specifica{
     color:rgba(0,148,236);
     text-align: center;
     font-weight: bold;
-    /* text-shadow: 2px 1px black; */
+}
+.filtri input[type="number"]{
+    text-indent: 11px;
+    border: none;
+}
+/*parte superiore*/
+.top{
+    position: fixed;
+    right: 20px;
+    left:20px;
+    height: 100px;
+    width: auto;
 }
 /*logo*/
 #logo{
-    position: absolute;
+    position: fixed;
     width:500px;
     height: 100px;
     left:34%;
 }
-/*stile componenti della classe filtri*/
-#specifiche{
-    font-size: 20px;
-    /* font-weight: bold; */
-}
 
 /*Area di interazione*/
 .areapc{
-    position:absolute;
-    height: 480px;
+    position:fixed;
+    height: 490px;
     width: 60%;
     background: white;
     border: 2px ridge rgb(202, 202, 202);
     left: 20%;
     top: 160px;
     border-radius: 15px;
-    /* box-shadow: 3px 2px blue; */
+    overflow-y: auto;
 }
 /*bottoni d'intezione superiori*/
 .areatop{
-    position: absolute;
-    top:130px;
+    position: fixed;
+    top:105px;
     left:33.3%;
     right: 33.3%;
     width: auto;
     height: 10px;
     text-decoration: none;
     text-align: center;
+}
+.areatop li{
+    display:block;
+}
+.areatop li:hover{
+    cursor:pointer;
+    background:-webkit-radial-gradient(center, ellipse cover,rgb(202, 202, 202) 0%,rgb(0, 148, 236) 100%);
+    color: white;
+    border-radius: 15px;
 }
 #latodx{
     position: absolute;
@@ -68,12 +85,11 @@ body{
     border: 2px ridge rgb(202, 202, 202);
     background: white;
     color:black;
-    /* box-shadow: 3px 2px blue; */
 }
 #latosx{
     position: absolute;
     left: 0;
-    width: 33.3%;
+    width: 33%;
     height: 20px;;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -81,18 +97,16 @@ body{
     border: 2px ridge rgb(202, 202, 202);
     background: white;
     color:black;
-    /* box-shadow: 0px 2px blue; */
 }
 #home{
     height: 20px;
     position: absolute;
     left: 33.3%;
-    width: 33.3%;
+    width: 32%;
     text-decoration: none;
     border: 2px ridge rgb(202, 202, 202);
     background: white;
     color:black;
-   /*  box-shadow: 0px 2px blue; */
 }
 /*bottoni inferiori*/
 #buttonpc{
@@ -114,7 +128,7 @@ body{
 }
 /* form ricerca pc*/
 .sezionericerca{
-    position: absolute;
+    position: fixed;
     top: 30px;
     right: 20px;
     height: 40px;
@@ -131,11 +145,10 @@ body{
     border: 2px ridge rgb(202, 202, 202);
     background-color: white;
     font-weight: bold;
-    /* box-shadow:  0 0px 3px blue; */
 }
 /*utente*/
 .areautente{
-    position: absolute;
+    position: fixed;
     top:15px;
     left:20px;
     width: 180px;
@@ -143,7 +156,10 @@ body{
     border-radius: 15px;
     border: 2px ridge rgb(202, 202, 202);
     background-color:white;
-    /* box-shadow: 3px 2px blue; */
+}
+.areautente a:visited, .areautente a:link, .areautente a:active{
+    color: blue;
+    text-decoration: none;
 }
 #image{
     position: absolute;
@@ -157,18 +173,16 @@ body{
     position: absolute;
     top:5px;
     left: 85px;
-
 }
 /*sezione pc consigliati*/
 .consigliati{
-    position: absolute;
-    top:120px;
+    position: fixed;
+    top:115px;
     right: 20px;
     border-radius: 15px;
     background: white;
     width: 220px;
-    height: 550px;
-    /* box-shadow: 3px 2px blue; */
+    height: 540px;
     border: 2px ridge rgb(202, 202, 202);
 }
 .consigliati #top{
@@ -186,9 +200,9 @@ body{
     position: absolute;
     text-align: center;
     width: 220px;
-    height: 520px;
+    height: 510px;
     border-radius: 15px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 .consigliati #bottom{
@@ -216,23 +230,45 @@ body{
     height: 50px;
     border-radius: 15px;
 }
+/*condizioni d'uso e info*/
+.privacy{
+    position: fixed;
+    top: 670px;
+    left:20px;
+    right:20px;
+    height: 50px;
+    background-color: rgb(0, 119, 255, .7);
+    border-radius: 15px;
+    color: white;
+    text-indent: 50px;
+}
+.privacy li{
+    display:block;
+    float:left;
+}
+.privacy li:hover{
+    cursor:pointer;
+}
+.privacy a:link, .privacy a:active, .privacy a:visited{
+    color: white;
+    text-decoration: none;
+}
+/*area accesso-registrazione*/
 .arealogin-signup{
     background: white;
-    /* box-shadow: 3px 2px blue; */
     border: 2px ridge rgb(202, 202, 202);
     position: absolute;
     top:140px;
     left:28%;
     right: 28%;
 }
-#scrittamail-password{
+/* #scrittamail-password{
 
 }
 #barramail-password{
 
-}
+} */
 #bottone{
-    /* box-shadow: 2px 1px rgb(0, 0, 0); */
     border: 2px ridge rgb(202, 202, 202);
     color: rgb(255, 255, 255);
     border-radius: 15px;
