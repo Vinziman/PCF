@@ -45,7 +45,7 @@ body{
 /*Area di interazione*/
 .areapc{
     position:fixed;
-    height: 490px;
+    height: 495px;
     width: 60%;
     background: white;
     border: 2px ridge rgb(202, 202, 202);
@@ -214,20 +214,23 @@ body{
     height: 20px;
     border-radius: 15px;
 }
-#pc{
-    position: absolute;
-    border: none;
-    left:2px;
-    border-bottom: 2px ridge silver;
+/*link scheda tecnica*/
+.pc{
+    
+    border: 2px ridge silver;
+    border-radius:2px;
     width: 200px;
-    height: 50px;
+    height: 150px;
+}
+#pcdesc{
+    margin-bottom: 0px;
+    font-size: 13px;
 }
 #pcimage{
-    position: absolute;
     top: 2.5px;
     left: 13px;
-    width: 55px;
-    height: 50px;
+    width: 90%;
+    height: 75%;
     border-radius: 15px;
 }
 /*condizioni d'uso e info*/
@@ -275,3 +278,4 @@ body{
     font-weight: bold;
     background: rgba(0,148,236);
 }
+/*Prezzo*/

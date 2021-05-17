@@ -29,60 +29,54 @@
         <!-- bottoni riga -->
         <div class="areatop">
             <ul>
-                <a href="desktop.php" id="latosx" ><li>Pc Desktop</li></a>
+                <a href="./desktop.php" id="latosx" ><li>Pc Desktop</li></a>
                 <a href="../PCF.html" id="home" ><li>Home</li></a>
-                <a href="portatili.php" id="latodx" ><li>Pc Portatile</li></a>
+                <a href="./portatili.php" id="latodx" ><li>Pc Portatile</li></a>
             </ul>
         </div>
         <!--Scelta dei filtri-->
         <div class="filtri">
-            <form action method="POST" href="homepage.php"> 
+            <form action="php/pc.php" method="POST"> 
                 <div id="specifiche">
                     <div id="specifica">CPU</div><!-- <br> -->
-                    <input type="checkbox" value="Intel">Intel<br>
-                    <input type="checkbox" value="AMD">AMD<br>
-                    <input type="checkbox" value="Apple">Apple<br>
+                    <input type="radio" name="cpu" value="Intel">Intel<br>
+                    <input type="radio" name="cpu" value="Amd">AMD<br>
+                    <input type="radio" name="cpu" value="Apple">Apple<br>
                 </div>
                 <div id="specifiche">
                     <div id="specifica">RAM</div><!-- <br> -->
-                    <input type="checkbox" value="4GB">4 GB<br>
-                    <input type="checkbox" value="8GB">8 GB<br>
-                    <input type="checkbox" value="12GB">12 GB<br>
-                    <input type="checkbox" value="12+GB">12+ GB<br>
+                    <input type="radio" value="4GB" name="ram">4 GB<br>
+                    <input type="radio" value="8GB" name="ram">8 GB<br>
+                    <input type="radio" value="12GB" name="ram">12 GB<br>
+                    <input type="radio" value="16GB" name="ram">16 GB<br>
+                    <input type="radio" value="32GB" name="ram">32 GB<br>
                 </div>
                 <div id="specifiche">
                     <div id="specifica">ROM</div><!-- <br> -->
-                    <input type="checkbox" value="4GB">HDD<br>
-                    <input type="checkbox" value="8GB">SSD<br>
-                    <input type="checkbox" value="12GB">eMMC<br>
+                    <input type="radio" value="hdd" name="rom">HDD<br>
+                    <input type="radio" value="ssd" name="rom">SSD<br>
+                    <input type="radio" value="eMMC" name="rom">eMMC<br>
                 </div>
                 <div id="specifiche">
                     <div id="specifica">SO</div><!-- <br> -->
-                    <input type="checkbox" value="Win10">Win10<br>
-                    <input type="checkbox" value="Mac_Os">Mac Os<br>
-                    <input type="checkbox" value="Chrome">Chrome<br>
-                    <input type="checkbox" value="Linux">Linux<br>
+                    <input type="radio" value="Windows" name="so">Win10<br>
+                    <input type="radio" value="MacOs" name="so">Mac Os<br>
+                    <input type="radio" value="Chrome" name="so">Chrome<br>
+                    <input type="radio" value="Linux" name="so">Linux<br>
                 </div>
-                <!-- <div id="specifiche">
-                    <div id="specifica">ARCHIVIANE</div><br>
-                    <input type="checkbox" value="4GB">128 GB<br>
-                    <input type="checkbox" value="8GB">256 GB<br>
-                    <input type="checkbox" value="12GB">512 GB<br>
-                    <input type="checkbox" value="12+GB">1 TB<br>
-                </div> -->
                 <div id="specifiche">
                     <div id="specifica">GPU</div><!-- <br> -->
-                    <input type="checkbox" value="Nvidia">Nvidia<br>
-                    <input type="checkbox" value="AMD">AMD<br>
+                    <input type="radio" value="Nvidia" name="gpu">Nvidia<br>
+                    <input type="radio" value="AMD" name="gpu">AMD<br>
                 </div>
                 <div id="specifiche">
-                    <div id="specifica">PREZZO</div><!-- <br> -->
-                    Min: <input type="number" min="0" max="5000" step="50" value="400"><br>
-                    Max: <input type="number" min="0" max="5000" step="50" value="800"><br>
+                    <div id="specifica">PREZZO</div>
+                    <input type="number" min="0" max="5000" step="50" value="400" name="pricemin"> 
+                    a  <input type="number" min="0" max="5000" step="50" value="1200" name="pricemax">
                 </div>
                 <br>
                 <div id="specifica"><!-- <br> -->
-                    <button id="bottone">Applica</button>
+                    <input type="submit" id="bottone" value="Applica">
                     <input type="reset" value="Annulla filtri" id="bottone">
                 </div>
             </form>
@@ -100,28 +94,13 @@
                     $con=mysqli_connect($host, $user, $psw);
                     if (!$con) {
                         die("Connection failed: " . mysqli_connect_error());
-                      }
-
-                   /*  mysqli_select_db($con, $db) or die("Errore scelta del database"); */
-
-                    $query="select * from pc where ram=8";
-                    $result=mysqli_query($con,$query);
-                    if(mysqli_num_rows($result)!=0){
-                        while($row=mysqli_fetch_array($result)){
-                ?>
-                evvai
-                <?php
-                }
-            }
+                    }
             mysqli_close($con);
                 ?>
             </div>
            <div class="consigliati">
                <div id="top">Consigliati</div> 
                <div id="elenco">
-                   <div id="pc">
-                       <div id="pcimage"></div>
-                   </div>
                </div>
                <div id="bottom"></div>
                </div>
