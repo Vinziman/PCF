@@ -54,6 +54,9 @@ body{
     border-radius: 15px;
     overflow-y: auto;
 }
+::-webkit-scrollbar-thumb{
+    border-radius:15px;
+}
 /*bottoni d'intezione superiori*/
 .areatop{
     position: fixed;
@@ -216,7 +219,9 @@ body{
 }
 /*link scheda tecnica*/
 .pc{
-    
+    margin-left:14px;
+    display: inline-grid;
+
     border: 2px ridge silver;
     border-radius:2px;
     width: 200px;
