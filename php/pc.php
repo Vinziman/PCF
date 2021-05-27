@@ -2,6 +2,19 @@
     <head>
         <title>PcFinder</title>
         <link rel="stylesheet" href="../base.css">
+        <style>
+            ::-webkit-scrollbar {
+                width: 20px;
+            }       
+            ::-webkit-scrollbar-track{
+                box-shadow: inset 0 0 5px grey; 
+                border-radius: 20px;
+            }
+            ::-webkit-scrollbar-thumb{
+                background:rgb(100, 100, 100);
+                border-radius:20px;
+            }
+        </style>
     </head>
     <body>
         <!--Sezione superiore-->
@@ -77,10 +90,12 @@
                 <br>
                 <div id="specifica"><!-- <br> -->
                     <input type="submit" id="bottone" value="Applica">
-                    <input type="reset" value="Annulla filtri" id="bottone">
+                    <!-- <input type="reset" value="Annulla filtri" id="bottone"> -->
                 </div>
             </form>
         </div>
+        <form action="PCF.php" method="GET">
+            <input type="submit" value="Compara" id="compara">
             <div class="areapc">
                 <?php 
                 /*connessione al db*/
@@ -94,7 +109,7 @@
                     $selectdb = mysqli_select_db($conn,$db);
                     /*controllo marca cpu*/
                     if(isset($_POST["cpu"])&&$_POST["cpu"]=="Intel"){
-                        $cpu="Intel";
+                        $cpu="i";
                     }
                     else if(isset($_POST["cpu"])&&$_POST["cpu"]=="Amd"){
                         $cpu="Amd";
@@ -132,7 +147,7 @@
                         $rom="SSD";
                     }
                     else if(isset($_POST["rom"])&&$_POST["rom"]=="eMMC"){
-                        $rom="eMMc";
+                        $rom="eMM";
                     }
                     else {
                         $rom="";
@@ -165,49 +180,56 @@
                     else{
                         $maxprice=2000;
                     }
+                    /*ram diversa da null*/
                     if($ram!=null){
-                    $select="SELECT * 
-                            from pc
-                            where cpu like '%$cpu%' and ram='$ram' and rom like '%$rom%' and so like '%$so%' and prezzo between '$minprice' and '$maxprice'
-                            order by marca asc";
+                        $select="SELECT * 
+                                from pc
+                                where cpu like '$cpu%' and ram='$ram' and rom like '%$rom%' and so like '%$so%' and prezzo between '$minprice' and '$maxprice'
+                                order by marca asc";
                     }
                     else{
                         $select="SELECT * 
                             from pc
-                            where cpu like '%$cpu%' and rom like '%$rom%' and so like '%$so%' and prezzo between '$minprice' and '$maxprice'
+                            where cpu like '$cpu%' and rom like '%$rom%' and so like '%$so%' and prezzo between '$minprice' and '$maxprice'
                             order by marca asc";
                     }
                     $query=mysqli_query($conn, $select);
                     
-                    $numrows=mysqli_num_rows($query);
+                    $numrows=mysqli_num_rows($query); 
                     if($numrows != 0){
-                        while($row = mysqli_fetch_array($query)){
-                            ?> 
-                            <div class="pc">
-                                <img src="../PcImmagini/<?php echo $row["immagine"] ?>" id="pcimage"/>
-                                <div id="pcdesc">
-                                    (<?php echo $row["id"]?>)<?php echo $row["marca"]. " " .$row["modello"]." ".$row["cpu"]." ".$row["ram"]?>GB<?php echo " ".$row["capienza"]?>GB
-                                </div>
-                            </div>
+                            while($row = mysqli_fetch_array($query)){
+                                ?>
+                                <div class="pc">
+                                    <img src="<?php echo $row["immagine"] ?>" id="pcimage"/>
+                                        <input type="checkbox" name="selection[]" value="<?php echo $row['id'] ?>">
+                                        <div id="pcdesc">
+                                            <!-- form per la scheda -->
+                                            <form action="schedatecnica.php" method="get">
+                                                (<?php echo $row["id"]?>)<?php echo $row["marca"]. " " .$row["modello"]." ".$row["cpu"]." ".$row["ram"]?>GB<?php echo " ".$row["capienza"]?>GB<br>
+                                                <input type="submit" value="vai alla scheda" id="scheda">
+                                            </form>
+                                        </div>                                                                   
+                                </div> 
                             <?php
-                        }
+                            }                 
                     }
+                    /* chiusura connessione */
                     mysqli_close($conn);
                 ?>
             </div>
-           <div class="consigliati">
-               <div id="top">Consigliati</div> 
-               <div id="elenco">
-               </div>
-               <div id="bottom"></div>
-               </div>
-               <div class="privacy">
-                <ul>
-                    <a href="chisiamo.html"><li>Chi siamo</li></a>
-                    <a href="cosePCF.html"><li>Cos'è PCF</li></a>
-                    <a href="privacy.html"><li>Informativa sulla privacy</li></a>
-                    <a href="terminiuso.html"><li>Termini d'uso</li></a>
-                </ul>
-               </div>
+        </form>
+        <div class="consigliati">
+            <div id="top">Consigliati</div> 
+            <div id="elenco"></div>
+            <div id="bottom"></div>
+        </div>
+        <div class="privacy">
+            <ul>
+                <a href="chisiamo.html"><li>Chi siamo</li></a>
+                <a href="cosePCF.html"><li>Cos'è PCF</li></a>
+                <a href="privacy.html"><li>Informativa sulla privacy</li></a>
+                <a href="terminiuso.html"><li>Termini d'uso</li></a>
+            </ul>
+        </div>
 </body>
 </html>

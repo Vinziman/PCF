@@ -3,6 +3,20 @@
     <head>
         <title>PcFinder</title>
         <link rel="stylesheet" href="base.css">
+        <!-- overwrider della barra di scroll laterale-->
+        <style>
+            ::-webkit-scrollbar {
+                width: 20px;
+            }       
+            ::-webkit-scrollbar-track{
+                box-shadow: inset 0 0 5px grey; 
+                border-radius: 10px;
+            }
+            ::-webkit-scrollbar-thumb{
+                background:rgb(100, 100, 100);
+                border-radius:15px;
+            }
+        </style>
     </head>
     <body>
         <!--Sezione superiore-->
@@ -82,6 +96,7 @@
                 </div>
             </form>
         </div>
+            <!--zona visualizzazione pc-->
             <div class="areapc">
             <!-- bottoni grandi -->
                 <a href="portatili.php" id="buttonpc" >

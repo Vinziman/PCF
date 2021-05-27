@@ -1,7 +1,21 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>PcFinder</title>
-        <link rel="stylesheet" href="base.css">
+        <link rel="stylesheet" href="../base.css">
+        <style>
+            ::-webkit-scrollbar {
+                width: 20px;
+            }       
+            ::-webkit-scrollbar-track{
+                box-shadow: inset 0 0 5px grey; 
+                border-radius: 20px;
+            }
+            ::-webkit-scrollbar-thumb{
+                background:rgb(100, 100, 100);
+                border-radius:20px;
+            }
+        </style>
     </head>
     <body>
         <!--Sezione superiore-->
@@ -10,7 +24,7 @@
             <img src="../LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/>
         <!--Area utente-->
             <div class="areautente">
-                <img id="image" src="guest.png"/>
+                <img id="image" src="../guest.png"/>
                 <div id="dati">
                     <a href="Login.html">Accedi</a><br>
                     <a href="Registrazione.html">Registrati</a>
@@ -30,108 +44,74 @@
         <div class="areatop">
             <ul>
                 <a href="desktop.php" id="latosx" ><li>Pc Desktop</li></a>
-                <a href="PCF.html" id="home" ><li>Home</li></a>
+                <a href="../PCF.html" id="home" ><li>Home</li></a>
                 <a href="portatili.php" id="latodx" ><li>Pc Portatile</li></a>
             </ul>
         </div>
-        <!--Scelta dei filtri-->
-        <div class="filtri">
-            <form action method="POST" href="homepage.php"> 
-                <div id="specifiche">
-                    <div id="specifica">CPU</div><!-- <br> -->
-                    <input type="checkbox" value="Intel">Intel<br>
-                    <input type="checkbox" value="AMD">AMD<br>
-                    <input type="checkbox" value="Apple">Apple<br>
-                </div>
-                <div id="specifiche">
-                    <div id="specifica">RAM</div><!-- <br> -->
-                    <input type="checkbox" value="4GB">4 GB<br>
-                    <input type="checkbox" value="8GB">8 GB<br>
-                    <input type="checkbox" value="12GB">12 GB<br>
-                    <input type="checkbox" value="12+GB">12+ GB<br>
-                </div>
-                <div id="specifiche">
-                    <div id="specifica">ROM</div><!-- <br> -->
-                    <input type="checkbox" value="4GB">HDD<br>
-                    <input type="checkbox" value="8GB">SSD<br>
-                    <input type="checkbox" value="12GB">eMMC<br>
-                </div>
-                <div id="specifiche">
-                    <div id="specifica">SO</div><!-- <br> -->
-                    <input type="checkbox" value="Win10">Win10<br>
-                    <input type="checkbox" value="Mac_Os">Mac Os<br>
-                    <input type="checkbox" value="Chrome">Chrome<br>
-                    <input type="checkbox" value="Linux">Linux<br>
-                </div>
-                <!-- <div id="specifiche">
-                    <div id="specifica">ARCHIVIANE</div><br>
-                    <input type="checkbox" value="4GB">128 GB<br>
-                    <input type="checkbox" value="8GB">256 GB<br>
-                    <input type="checkbox" value="12GB">512 GB<br>
-                    <input type="checkbox" value="12+GB">1 TB<br>
-                </div> -->
-                <div id="specifiche">
-                    <div id="specifica">GPU</div><!-- <br> -->
-                    <input type="checkbox" value="Nvidia">Nvidia<br>
-                    <input type="checkbox" value="AMD">AMD<br>
-                </div>
-                <div id="specifiche">
-                    <div id="specifica">PREZZO</div><!-- <br> -->
-                    Min: <input type="number" min="0" max="5000" step="50" value="400"><br>
-                    Max: <input type="number" min="0" max="5000" step="50" value="800"><br>
-                </div>
-                <br>
-                <div id="specifica"><!-- <br> -->
-                    <button id="bottone">Applica</button>
-                    <input type="reset" value="Annulla filtri" id="bottone">
-                </div>
-            </form>
-        </div>
-            <!-- <button id="latosx" href="desktop.php">Pc Desktop</button>
-            <button id="home" href="PCF.html">Home</button>
-            <button id="latodx" href="portatili.php">Pc Portatile</button> -->
-            <div class="areapc">
-            <?php 
-                    $host="127.0.0.1"; 
-                    $user="root";
-                    $psw="";
-                    $db="pcf";
+        <?php
+            $host='localhost'; 
+            $user='root';
+            $psw='';
+            $db='pcf';
 
-                    $con=mysqli_connect($host, $user, $psw);
-                    if (!$con) {
-                        die("Connection failed: " . mysqli_connect_error());
-                      }
+            $conn = mysqli_connect($host, $user, $psw);
 
-                   /*  mysqli_select_db($con, $db) or die("Errore scelta del database"); */
-
-                    $query="select * from pc where ram=8";
-                    $result=mysqli_query($con,$query);
-                    if(mysqli_num_rows($result)!=0){
-                        while($row=mysqli_fetch_array($result)){
-                ?>
-                evvai
-                <?php
+            $selectdb = mysqli_select_db($conn,$db);
+            $n=count($_GET['selection']);
+            if($n>3){
+                echo "Errore,siamo spiacenti il sito al momento può supportore solo 3 pc in comparazione la preghiamo di tornare alla pagina precedente,";
+            }
+            else{
+                if(!empty($_GET['selection'])) {
+                    foreach($_GET['selection'] as $check) {
+                        $select="SELECT *
+                                FROM pc
+                                WHERE id='$check'";
+                        $query=mysqli_query($conn, $select);
+                        $numrows=mysqli_num_rows($query); 
+                    if($numrows != 0){
+                            while($row = mysqli_fetch_array($query)){
+                            ?>
+                            <div class="comparazione">
+                                <img src="<?php echo $row['immagine']?>" id="pcimage"/>
+                                <div id="caratteristica">Marca: </div>
+                                <div id="caratteristica">Modello: </div>
+                                <div id="caratteristica">Cpu: </div>
+                                <div id="caratteristica">Ram: </div>
+                                <div id="caratteristica">Memoria: </div>
+                                <div id="caratteristica">Prezzo: </div>
+                                <div id="caratteristica">Punteggi:
+                                    <table>
+                                        <tr>
+                                            <th>Qualità/Prezzo</th>
+                                            <th>Gaming</th>
+                                            <th>Editing</th>
+                                            <th>Workstation</th>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="caratteristica">Link per acquisto: </div>
+                            </div>
+                            <?php
+                            }
+                        }
+                    }
                 }
             }
-            mysqli_close($con);
-                ?>
-            </div>
-           <div class="consigliati">
-               <div id="top">Consigliati</div> 
-               <div id="elenco">
-                   <div id="pc">
-                       <div id="pcimage"></div>
-                   </div>
-               </div>
-               <div id="bottom"></div>
-               </div>
-               <div class="privacy">
-                <ul>
-                    <a href="chisiamo.html"><li>Chi siamo</li></a>
-                    <a href="cosePCF.html"><li>Cos'è PCF</li></a>
-                    <a href="privacy.html"><li>Informativa sulla privacy</li></a>
-                    <a href="terminiuso.html"><li>Termini d'uso</li></a>
-                </ul>
-               </div>
-    </body>
+        ?>
+        <div class="privacy">
+            <ul>
+                <a href="chisiamo.html"><li>Chi siamo</li></a>
+                <a href="cosePCF.html"><li>Cos'è PCF</li></a>
+                <a href="privacy.html"><li>Informativa sulla privacy</li></a>
+                <a href="terminiuso.html"><li>Termini d'uso</li></a>
+            </ul>
+        </div>
+</body>
 </html>
