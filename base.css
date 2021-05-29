@@ -33,6 +33,7 @@ body{
     left:20px;
     height: 100px;
     width: auto;
+    /* background-color:rgb(0, 119, 255, .7) ; */
 }
 /*logo*/
 #logo{
@@ -291,10 +292,52 @@ body{
     background: white;
     border: 2px ridge rgb(202, 202, 202);
     margin-top: 160px;
+    margin-left: 2.2%;
+    border-radius: 15px;
+    display: inline-grid;
+}
+/* .comparazione1{
+    width: 30%;
+    background: white;
+    border: 2px ridge rgb(202, 202, 202);
+    margin-top: 160px;
     margin-left: 2%;
     border-radius: 15px;
     display: inline-grid;
 }
-#caratteristiche{
+.comparazione2{
+    width: 30%;
+    background: white;
+    border: 2px ridge rgb(202, 202, 202);
+    margin-top: 160px;
+    margin-left: 2%;
+    border-radius: 15px;
+    display: inline-grid;
+}
+.comparazione3{
+    width: 30%;
+    background: white;
+    border: 2px ridge rgb(202, 202, 202);
+    margin-top: 160px;
+    margin-left: 2%;
+    border-radius: 15px;
+    display: inline-grid;
+} */
+#caratteristica{
 background: none;
+margin-left: 10px;;
+}
+#comparaimage{
+    border-radius: 5px;
+    width: 65%;
+    height: 200px;
+    margin-left: 80px;
+}
+#table{
+    text-align: center;
+    margin-left:6%;
+}
+#e-commerce{
+    margin-left: 35%;
+    width: 100%;
 }

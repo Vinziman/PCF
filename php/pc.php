@@ -17,7 +17,7 @@
         </style>
     </head>
     <body>
-        <!--Sezione superiore-->
+        <!--Sezione superiore conteente icona, area utente e barra di ricerca-->
         <div class="top">
             <!-- Icona -->
             <img src="../LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/>
@@ -95,7 +95,7 @@
             </form>
         </div>
         <form action="PCF.php" method="GET">
-            <input type="submit" value="Compara" id="compara">
+            <input type="submit" value="Compara" id="compara" name="invio">
             <div class="areapc">
                 <?php 
                 /*connessione al db*/
@@ -213,6 +213,7 @@
                             <?php
                             }                 
                     }
+                    /* if(){} */
                     /* chiusura connessione */
                     mysqli_close($conn);
                 ?>

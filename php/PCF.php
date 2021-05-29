@@ -73,15 +73,18 @@
                             while($row = mysqli_fetch_array($query)){
                             ?>
                             <div class="comparazione">
-                                <img src="<?php echo $row['immagine']?>" id="pcimage"/>
-                                <div id="caratteristica">Marca: </div>
-                                <div id="caratteristica">Modello: </div>
-                                <div id="caratteristica">Cpu: </div>
-                                <div id="caratteristica">Ram: </div>
-                                <div id="caratteristica">Memoria: </div>
-                                <div id="caratteristica">Prezzo: </div>
+                                <br>
+                                <img src="<?php echo $row['immagine']?>" id="comparaimage"/><br>
+                                <div id="caratteristica" style="margin-left:200px;"><?php echo $row['prezzo']?> €</div>
+                                <div id="caratteristica">Marca: <?php echo $row['marca']?></div>
+                                <div id="caratteristica">Modello: <?php echo $row['modello']?></div>
+                                <div id="caratteristica">Cpu: <?php echo $row['cpu']?></div>
+                                <div id="caratteristica">Ram: <?php echo $row['ram']?> GB</div>
+                                <div id="caratteristica">Memoria: <?php echo $row['rom']?></div>
+                                <div id="caratteristica">Capienza: <?php echo $row['capienza']?> GB</div>
+                                
                                 <div id="caratteristica">Punteggi:
-                                    <table>
+                                    <table id="table">
                                         <tr>
                                             <th>Qualità/Prezzo</th>
                                             <th>Gaming</th>
@@ -89,14 +92,15 @@
                                             <th>Workstation</th>
                                         </tr>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td><?php echo $row['qp']?></td>
+                                            <td><?php echo $row['gaming']?></td>
+                                            <td><?php echo $row['editing']?></td>
+                                            <td><?php echo $row['workstation']?></td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div id="caratteristica">Link per acquisto: </div>
+                                <div id="caratteristica"> <a href="<?php echo $row['link']?>" id="e-commerce" target="_blank">Link per acquisto</a></div>
+                                <br>
                             </div>
                             <?php
                             }

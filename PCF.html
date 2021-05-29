@@ -19,7 +19,7 @@
         </style>
     </head>
     <body>
-        <!--Sezione superiore-->
+        <!--Sezione superiore conteente icona, area utente e barra di ricerca-->
         <div class="top">
             <!-- Icona -->
             <img src="./LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/>
@@ -42,16 +42,21 @@
         </div>
         <!--Realizzazione della zona di ricerca di pc desktop e portatili-->
         <!-- bottoni riga -->
-        <div class="areatop">
+        <!-- <div class="areatop">
             <ul>
                 <a href="php/desktop.php" id="latosx"><li>Pc Desktop</li></a>
                 <a href="PCF.html" id="home"><li>Home</li></a>            
                 <a href="php/desktop.php" id="latodx"><li>Pc Portatile</li></a>
             </ul>
-        </div>
+        </div> -->
         <!--Scelta dei filtri-->
         <div class="filtri">
             <form action="php/pc.php" method="POST"> 
+                <!-- <div id="specifiche">
+                    <div id="specifica">Tipologia</div>
+                    <input type="radio" name="tipologia" value="portatile">Portatile<br>
+                    <input type="radio" name="tipologia" value="desktop">Desktop<br>
+                </div> -->
                 <div id="specifiche">
                     <div id="specifica">CPU</div><!-- <br> -->
                     <input type="radio" name="cpu" value="Intel">Intel<br>
@@ -99,12 +104,12 @@
             <!--zona visualizzazione pc-->
             <div class="areapc">
             <!-- bottoni grandi -->
-                <a href="portatili.php" id="buttonpc" >
+                <!-- <a href="portatili.php" id="buttonpc" >
                     <img src="./PcImmagini/pcportatile.png" alt="Pc portatili" id="size">
                 </a>
                 <a id="buttonpc" href="desktop.php">
                     <img src="./PcImmagini/pcdesktop.png" alt="Pc desktop" id="size">
-                </a>
+                </a> -->
             </div>
            <div class="consigliati">
                <div id="top">Consigliati</div> 
