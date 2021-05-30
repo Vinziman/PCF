@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 29, 2021 alle 12:29
+-- Creato il: Mag 30, 2021 alle 18:33
 -- Versione del server: 10.4.18-MariaDB
 -- Versione PHP: 8.0.3
 
@@ -88,7 +88,13 @@ INSERT INTO `pc` (`id`, `marca`, `modello`, `tipologia`, `so`, `ram`, `cpu`, `gp
 (54, 'HP', '255 G8', 'portatile', 'Windows 10 Pro', 8, 'AMD A4 3020', 'AMD Radeon R3', 'SSD', 256, 596, 0, '', 'https://www.amazon.it/Notebook-9125-fino-Bluetooth-Italiano-Garanzia/dp/B07MFFS2MV/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hp+255+G8&qid=1617785421&sr=8-1-spons&psc=1&smid=A1SZNFN635QQI6&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFGNllLSEY1RFhPNkgmZW5jcnlwdGVkSWQ9QTAxMjg2OTRBVzNKWDVBRVRVUkQmZW5jcnlwdGVkQWRJZD1BMDAwMzI2MjNWVkxXRTAyQlhFRk0md2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl', 'https://images-na.ssl-images-amazon.com/images/I/71i3tWI19pL._AC_SL1500_.jpg', 0, 0, 0),
 (55, 'HP', '255 G8', 'portatile', 'Windows 10 Pro', 8, 'AMD Athlon 3020e', 'AMD Radeon', 'SSD', 256, 538, 0, '', 'https://www.amazon.it/HP-255-G8-portatile-Bluetooth/dp/B08TQH1PN5/ref=sr_1_2_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hp+255+G8&qid=1617785421&sr=8-2-spons&psc=1&smid=A8S1KWNUMXYCT&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFGNllLSEY1RFhPNkgmZW5jcnlwdGVkSWQ9QTAxMjg2OTRBVzNKWDVBRVRVUkQmZW5jcnlwdGVkQWRJZD1BMDk4OTQ3NTM1N1c2NkFJV1o1RFUmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl', 'https://images-na.ssl-images-amazon.com/images/I/71i3tWI19pL._AC_SL1500_.jpg', 0, 0, 0),
 (56, 'HP', '255 G7', 'portatile', 'Windows 10 Pro', 8, 'AMD Athlon Silver 30', 'AMD Radeon R3', 'SSD', 256, 594.9, 0, '', 'https://www.amazon.it/Notebook-Portatile-Display-Masterizzatore-Bluetooth/dp/B07SZ74WMQ/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hp+255+g7&qid=1617787931&sr=8-1-spons&psc=1&smid=A3CZYQKI1SOFSO&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExTklOTE1KSjRYVU9EJmVuY3J5cHRlZElkPUExMDI1MzAwM1E1SjZJTzhEQVI0NyZlbmNyeXB0ZWRBZElkPUEwODU5ODYzMTRVQjAxWjRaVVZORCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=', 'https://images-na.ssl-images-amazon.com/images/I/61wofVX8ZDL._AC_SL1000_.jpg', 0, 0, 0),
-(57, 'HP', '255 G7', 'portatile', 'Windows 10 Pro', 8, 'AMD A4', 'AMD Radeon R3', 'SSD', 500, 599.99, 0, '', 'https://www.amazon.it/255-portatile-Bluetooth-professional-Antivirus/dp/B08KSJFSJC/ref=sr_1_4_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hp+255+g7&qid=1617787931&sr=8-4-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExTklOTE1KSjRYVU9EJmVuY3J5cHRlZElkPUExMDI1MzAwM1E1SjZJTzhEQVI0NyZlbmNyeXB0ZWRBZElkPUEwNjMxMjYyMlNNQzc3VEdCVUZIRCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=', 'https://images-na.ssl-images-amazon.com/images/I/61wofVX8ZDL._AC_SL1000_.jpg', 0, 0, 0);
+(57, 'HP', '255 G7', 'portatile', 'Windows 10 Pro', 8, 'AMD A4', 'AMD Radeon R3', 'SSD', 500, 599.99, 0, '', 'https://www.amazon.it/255-portatile-Bluetooth-professional-Antivirus/dp/B08KSJFSJC/ref=sr_1_4_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hp+255+g7&qid=1617787931&sr=8-4-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExTklOTE1KSjRYVU9EJmVuY3J5cHRlZElkPUExMDI1MzAwM1E1SjZJTzhEQVI0NyZlbmNyeXB0ZWRBZElkPUEwNjMxMjYyMlNNQzc3VEdCVUZIRCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=', 'https://images-na.ssl-images-amazon.com/images/I/61wofVX8ZDL._AC_SL1000_.jpg', 0, 0, 0),
+(58, 'HP', 'M01-F1003ng', 'desktop', 'FreeDOS', 8, 'i3-10100', 'Intel UHD Graphics 6', 'SSD', 512, 427.73, 0, '', 'https://www.amazon.it/HP-M01-F1003ng-Desktop-i3-10100-grafica/dp/B08DBD6DDW/ref=sr_1_26?dchild=1&qid=1622283910&refinements=p_89%3AHP&s=pc&sr=1-26', 'https://images-na.ssl-images-amazon.com/images/I/71XXQhJrdrL._AC_SL1500_.jpg', 0, 0, 0),
+(59, 'HP', 'Pavilion Gaming TG01-1288nf', 'desktop', 'Windows 10 Adv', 16, ' i7-10700F', 'nVidia GTX1660 Super', 'SSD', 1024, 1260.49, 0, '', 'https://www.amazon.it/HP-Pavilion-TG01-1288nf-i7-10700F-Win10Adv/dp/B08YP6VSYS/ref=sr_1_3?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hp+desktop&qid=1622284755&s=pc&sr=1-3', 'https://images-na.ssl-images-amazon.com/images/I/31A5jBOo-lL._AC_.jpg', 0, 0, 0),
+(60, 'HP', 'Pavilion TP01-0050nl', 'desktop', 'Windows 10 Home', 8, 'i5-9400', 'Intel UHD 630', 'SSD', 256, 579.99, 0, '', 'https://www.amazon.it/HP-Pavilion-TP01-0050nl-Desktop-Tastiera/dp/B086K93MZ2/ref=sr_1_4?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hp+desktop&qid=1622284755&s=pc&sr=1-4', 'https://images-na.ssl-images-amazon.com/images/I/81Tmmyv%2Bj0L._AC_SL1500_.jpg', 0, 0, 0),
+(61, 'HP', 'Slim S01-aF0304ng', 'desktop', 'Windows 10 Home', 8, 'AMD Athlon 3150U', 'AMD Graphic', 'SSD', 256, 376.47, 0, '', 'https://www.amazon.it/HP-S01-aF0304ng-Desktop-grafica-Windows/dp/B08DBFD4J1/ref=sr_1_8?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hp%2Bdesktop&qid=1622284755&s=pc&sr=1-8&th=1', 'https://images-na.ssl-images-amazon.com/images/I/71ri%2BF%2Bgv7L._AC_SL1500_.jpg', 0, 0, 0),
+(62, 'HP', 'ProDesk 600 G5 ', 'desktop', 'Windows 10 Pro', 16, 'i7-9700', 'Intel UHD Graphics 6', 'SSD', 512, 1089, 0, '', 'https://www.amazon.it/HP-ProDesk-Microtower-PC-Intel-i7-9700/dp/B083TZRK15/ref=sr_1_49?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=HP+PC+DESKTOP&qid=1622292223&sr=8-49', 'https://images-na.ssl-images-amazon.com/images/I/61qN7ap2EgL._AC_SL1200_.jpg', 0, 0, 0),
+(63, 'HP', 'ProBook 635 Aero G7', 'portatile', 'Windows 10 Pro', 16, 'AMD Ryzen 7 4700U', 'AMD Radeon Graphics', 'SSD', 1024, 1103.66, 0, '', 'https://www.amazon.it/HP-Notebook-Impronte-Digitali-Retroilluminata/dp/B08VMTVK3B/ref=sr_1_106_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=HP+PC+DESKTOP&qid=1622293106&sr=8-106-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExVFpaVzFBMVBHNkNXJmVuY3J5cHRlZElkPUEwMDUxMzA2WE84T01TSlVTREZZJmVuY3J5cHRlZEFkSWQ9QTA4NTc2ODVDQUJSWjlBTklJUzEmd2lkZ2V0TmFtZT1zcF9idGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl', 'https://images-na.ssl-images-amazon.com/images/I/81xowRMiLML._AC_SL1500_.jpg', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -123,12 +129,6 @@ CREATE TABLE `utente` (
 --
 -- Indici per le tabelle scaricate
 --
-
---
--- Indici per le tabelle `pc`
---
-ALTER TABLE `pc`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indici per le tabelle `pcutente`
