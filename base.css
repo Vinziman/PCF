@@ -5,13 +5,13 @@ body{
 /*filtri*/
 .filtri{
     position: absolute;
-    top:115px;
+    top:80px;
     left: 20px;
     border-radius: 15px;
     border: 2px ridge rgb(202, 202, 202);
     background: white;
     width: 180px;
-    height: 540px;
+    height: 580px;
 }
 /*stile componenti della classe filtri*/
 #specifiche{
@@ -27,87 +27,35 @@ body{
     border: none;
 }
 /*parte superiore*/
-.top{
+header{
+    border-radius: 15px;
     position: fixed;
     right: 20px;
     left:20px;
-    height: 100px;
+    height: 50px;
+    padding: 5px;
     width: auto;
-    /* background-color:rgb(0, 119, 255, .7) ; */
+    background-color:#085394;
 }
 /*logo*/
 #logo{
     position: fixed;
-    width:500px;
-    height: 100px;
-    left:34%;
+    width:250px;
+    height: 50px;
+    left:3%;
 }
 
 /*Area di interazione*/
 .areapc{
     position:fixed;
-    height: 495px;
-    width: 60%;
+    height: 540px;
+    right:5%;
     background: white;
     border: 2px ridge rgb(202, 202, 202);
-    left: 20%;
-    top: 160px;
+    left: 18.25%;
+    top: 115px;
     border-radius: 15px;
     overflow-y: auto;
-}
-/*bottoni d'intezione superiori*/
-.areatop{
-    position: fixed;
-    top:105px;
-    left:33.3%;
-    right: 33.3%;
-    width: auto;
-    height: 10px;
-    text-decoration: none;
-    text-align: center;
-}
-.areatop li{
-    display:block;
-}
-.areatop li:hover{
-    cursor:pointer;
-    background:-webkit-radial-gradient(center, ellipse cover,rgb(202, 202, 202) 0%,rgb(0, 148, 236) 100%);
-    color: white;
-    border-radius: 15px;
-}
-#latodx{
-    position: absolute;
-    right: 0;
-    width: 33.3%;
-    height: 20px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    text-decoration: none;
-    border: 2px ridge rgb(202, 202, 202);
-    background: white;
-    color:black;
-}
-#latosx{
-    position: absolute;
-    left: 0;
-    width: 33%;
-    height: 20px;;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    text-decoration: none;
-    border: 2px ridge rgb(202, 202, 202);
-    background: white;
-    color:black;
-}
-#home{
-    height: 20px;
-    position: absolute;
-    left: 33.3%;
-    width: 32%;
-    text-decoration: none;
-    border: 2px ridge rgb(202, 202, 202);
-    background: white;
-    color:black;
 }
 /*bottoni inferiori*/
 #buttonpc{
@@ -242,25 +190,25 @@ body{
     top:122px;
 }
 /*condizioni d'uso e info*/
-.privacy{
+footer{
     position: fixed;
-    top: 670px;
+    top: 92%;
     left:20px;
     right:20px;
     height: 50px;
-    background-color: rgb(0, 119, 255, .7);
+    background-color:#085394;
     border-radius: 15px;
     color: white;
     text-indent: 50px;
 }
-.privacy li{
+footer li{
     display:block;
     float:left;
 }
-.privacy li:hover{
+footer li:hover{
     cursor:pointer;
 }
-.privacy a:link, .privacy a:active, .privacy a:visited{
+footer a:link, .privacy a:active, .privacy a:visited{
     color: white;
     text-decoration: none;
 }
@@ -273,12 +221,6 @@ body{
     left:28%;
     right: 28%;
 }
-/* #scrittamail-password{
-
-}
-#barramail-password{
-
-} */
 #bottone{
     border: 2px ridge rgb(202, 202, 202);
     color: rgb(255, 255, 255);
@@ -296,33 +238,6 @@ body{
     border-radius: 15px;
     display: inline-grid;
 }
-/* .comparazione1{
-    width: 30%;
-    background: white;
-    border: 2px ridge rgb(202, 202, 202);
-    margin-top: 160px;
-    margin-left: 2%;
-    border-radius: 15px;
-    display: inline-grid;
-}
-.comparazione2{
-    width: 30%;
-    background: white;
-    border: 2px ridge rgb(202, 202, 202);
-    margin-top: 160px;
-    margin-left: 2%;
-    border-radius: 15px;
-    display: inline-grid;
-}
-.comparazione3{
-    width: 30%;
-    background: white;
-    border: 2px ridge rgb(202, 202, 202);
-    margin-top: 160px;
-    margin-left: 2%;
-    border-radius: 15px;
-    display: inline-grid;
-} */
 #caratteristica{
 background: none;
 margin-left: 10px;;

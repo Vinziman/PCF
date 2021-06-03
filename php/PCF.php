@@ -23,14 +23,6 @@
             <!-- Icona -->
             <img src="../LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/>
         <!--Area utente-->
-            <div class="areautente">
-                <img id="image" src="../guest.png"/>
-                <div id="dati">
-                    <a href="Login.html">Accedi</a><br>
-                    <a href="Registrazione.html">Registrati</a>
-                </div>
-                <!-- <a href="Profilo.php" id="view">visita</a> -->
-            </div>
             <!-- sezione ricerca -->
             <form action="pc.php" method="get">
                 <div class="sezionericerca">
@@ -41,13 +33,7 @@
         </div>
         <!--Realizzazione della zona di ricerca di pc desktop e portatili-->
         <!-- bottoni riga -->
-        <div class="areatop">
-            <ul>
-                <a href="desktop.php" id="latosx" ><li>Pc Desktop</li></a>
-                <a href="../PCF.html" id="home" ><li>Home</li></a>
-                <a href="portatili.php" id="latodx" ><li>Pc Portatile</li></a>
-            </ul>
-        </div>
+        
         <?php
             $host='localhost'; 
             $user='root';
@@ -109,13 +95,13 @@
                 }
             }
         ?>
-        <div class="privacy">
+        <footer>
             <ul>
                 <a href="chisiamo.html"><li>Chi siamo</li></a>
                 <a href="cosePCF.html"><li>Cos'è PCF</li></a>
                 <a href="privacy.html"><li>Informativa sulla privacy</li></a>
                 <a href="terminiuso.html"><li>Termini d'uso</li></a>
             </ul>
-        </div>
+        </footer>
 </body>
 </html>

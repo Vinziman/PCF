@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 30, 2021 alle 18:33
+-- Creato il: Giu 03, 2021 alle 16:00
 -- Versione del server: 10.4.18-MariaDB
 -- Versione PHP: 8.0.3
 
@@ -36,7 +36,7 @@ CREATE TABLE `pc` (
   `ram` int(2) NOT NULL,
   `cpu` varchar(20) NOT NULL,
   `gpu` varchar(20) NOT NULL,
-  `rom` varchar(3) NOT NULL,
+  `rom` varchar(4) NOT NULL,
   `capienza` int(4) NOT NULL,
   `prezzo` float NOT NULL,
   `qp` float NOT NULL,
@@ -70,8 +70,8 @@ INSERT INTO `pc` (`id`, `marca`, `modello`, `tipologia`, `so`, `ram`, `cpu`, `gp
 (22, 'Acer', 'Aspire 3', 'portatile', 'Windows 10 Home ', 8, 'i5-1035G1', 'NVIDIA GeForce MX330', 'SSD', 256, 755, 0, '', 'https://www.amazon.it/ACER-ASPIRE-A315-57G-59FS-i5-1035G1-256GB-NVIDIA/dp/B08NTNSD4L/ref=sr_1_6?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=acer+aspire+3&qid=1616687298&s=pc&sr=1-6', 'https://images-na.ssl-images-amazon.com/images/I/41Owk8QajXL._AC_.jpg', 0, 0, 0),
 (23, 'Acer', 'Swift 5', 'portatile', 'Windows 10 Home ', 8, 'i7-1165G7', 'NVIDIA GeForce MX350', 'SSD', 512, 1361.73, 0, '', 'https://www.amazon.it/ACER-SWIFT-SF514-55GT-78FL-i7-1165G7-NVMe-NVIDIA/dp/B08NTV2X7V/ref=sr_1_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=YKZZFQ7JJUO0&dchild=1&keywords=acer+swift+5&qid=1616687586&s=pc&sprefix=acer+s%2Ccomputers%2C211&sr=1-1', 'https://images-na.ssl-images-amazon.com/images/I/41CJprDcP5L._AC_.jpg', 0, 0, 0),
 (34, 'ASUS', 'ZenBook Pro Duo', 'portatile', 'Windows 10', 8, 'i7-1075', '', 'SSD', 512, 1999, 7.3, '', 'https://www.amazon.it/ZenBook-UX482EG-HY067R-i7-1165G7-802-11ax-screenpad/dp/B08P9SBDXZ/ref=asc_df_B08P9SBDXZ/?tag=googshopit-21&linkCode=df0&hvadid=498962644292&hvpos=&hvnetw=g&hvrand=2794086278996712270&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1008080&hvtargid=pla-1187335060313&psc=1', 'https://images-na.ssl-images-amazon.com/images/I/61AuXJ%2B5A6L._AC_SL1443_.jpg', 6, 8.8, 6.5),
-(35, 'ASUS', 'Transformer T10', 'portatile', 'Windows 10', 4, 'Intel Atom Z8350 Qua', '', 'eMM', 64, 599, 4.8, '', 'https://www.amazon.it/dp/B06ZXXY83T?tag=buonobutt-21&linkCode=ogi&th=1&psc=1', 'https://images-na.ssl-images-amazon.com/images/I/91TtVD6eBXL._AC_SL1500_.jpg', 3.8, 5.5, 5.6),
-(36, 'ASUS', 'E203NA-FD029T P', 'portatile', 'Windows 10', 4, 'Intel Celeron N3350', '', 'eMM', 32, 399, 5, '', 'https://www.amazon.it/dp/B075GSTCWB?tag=buonobutt-21&linkCode=ogi&th=1&psc=1', 'https://images-na.ssl-images-amazon.com/images/I/61eMrewKEcL._AC_SL1200_.jpg', 3.6, 0, 0),
+(35, 'ASUS', 'Transformer T10', 'portatile', 'Windows 10', 4, 'Intel Atom Z8350 Qua', '', 'eMMC', 64, 599, 4.8, '', 'https://www.amazon.it/dp/B06ZXXY83T?tag=buonobutt-21&linkCode=ogi&th=1&psc=1', 'https://images-na.ssl-images-amazon.com/images/I/91TtVD6eBXL._AC_SL1500_.jpg', 3.8, 5.5, 5.6),
+(36, 'ASUS', 'E203NA-FD029T P', 'portatile', 'Windows 10', 4, 'Intel Celeron N3350', '', 'eMMC', 32, 399, 5, '', 'https://www.amazon.it/dp/B075GSTCWB?tag=buonobutt-21&linkCode=ogi&th=1&psc=1', 'https://images-na.ssl-images-amazon.com/images/I/61eMrewKEcL._AC_SL1200_.jpg', 3.6, 0, 0),
 (37, 'ASUS', 'VivoBook Notebook 15', 'portatile', 'Windows 10', 4, 'Intel Celeron N3350', '', 'HDD', 500, 899, 6.2, '', 'https://www.amazon.it/dp/B0756NM361?tag=buonobutt-21&linkCode=ogi&th=1&psc=1', 'https://images-na.ssl-images-amazon.com/images/I/81ndQXNia2L._AC_SL1500_.jpg', 6.3, 7, 7.1),
 (38, 'ASUS', 'Laptop A509JB-EJ098T', 'portatile', 'Windows 10', 8, 'i7-1065G7', '', 'SSD', 512, 1199, 7.8, '', 'https://www.amazon.it/dp/B082WX8476?tag=pcportatili09-21&linkCode=ogi&th=1&psc=1', 'https://images-na.ssl-images-amazon.com/images/I/81bRmH5QmqL._AC_SL1500_.jpg', 6.9, 8.2, 8),
 (39, 'MSI', 'CREATOR 15 A10UGT-04', 'portatile', 'Windows 10', 32, 'i7-10875H', '', 'SSD', 2048, 3099, 7.3, '', 'https://www.notebookgaming.it/MSI-Creator-15-A10UGT-043IT-miglior-prezzo-napoli', 'https://www.notebookgaming.it/image/cache/catalog/Prodotti/CREATOR/CREATOR%2015%20A10Ux%20touch/MSI_NB_Creator_15_Touch_photo01-800x800.png', 8.5, 9.8, 9.6),
@@ -96,62 +96,15 @@ INSERT INTO `pc` (`id`, `marca`, `modello`, `tipologia`, `so`, `ram`, `cpu`, `gp
 (62, 'HP', 'ProDesk 600 G5 ', 'desktop', 'Windows 10 Pro', 16, 'i7-9700', 'Intel UHD Graphics 6', 'SSD', 512, 1089, 0, '', 'https://www.amazon.it/HP-ProDesk-Microtower-PC-Intel-i7-9700/dp/B083TZRK15/ref=sr_1_49?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=HP+PC+DESKTOP&qid=1622292223&sr=8-49', 'https://images-na.ssl-images-amazon.com/images/I/61qN7ap2EgL._AC_SL1200_.jpg', 0, 0, 0),
 (63, 'HP', 'ProBook 635 Aero G7', 'portatile', 'Windows 10 Pro', 16, 'AMD Ryzen 7 4700U', 'AMD Radeon Graphics', 'SSD', 1024, 1103.66, 0, '', 'https://www.amazon.it/HP-Notebook-Impronte-Digitali-Retroilluminata/dp/B08VMTVK3B/ref=sr_1_106_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=HP+PC+DESKTOP&qid=1622293106&sr=8-106-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExVFpaVzFBMVBHNkNXJmVuY3J5cHRlZElkPUEwMDUxMzA2WE84T01TSlVTREZZJmVuY3J5cHRlZEFkSWQ9QTA4NTc2ODVDQUJSWjlBTklJUzEmd2lkZ2V0TmFtZT1zcF9idGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl', 'https://images-na.ssl-images-amazon.com/images/I/81xowRMiLML._AC_SL1500_.jpg', 0, 0, 0);
 
--- --------------------------------------------------------
-
---
--- Struttura della tabella `pcutente`
---
-
-CREATE TABLE `pcutente` (
-  `cf` varchar(16) NOT NULL,
-  `id` int(3) NOT NULL,
-  `dataricerca` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `utente`
---
-
-CREATE TABLE `utente` (
-  `cf` varchar(16) NOT NULL,
-  `nome` varchar(30) NOT NULL,
-  `cognome` varchar(30) NOT NULL,
-  `datanascita` date NOT NULL,
-  `comuneresidenza` varchar(30) NOT NULL,
-  `comunenascita` varchar(30) NOT NULL,
-  `mail` varchar(30) NOT NULL,
-  `password` varchar(15) NOT NULL,
-  `imageprofilo` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Indici per le tabelle scaricate
 --
 
 --
--- Indici per le tabelle `pcutente`
+-- Indici per le tabelle `pc`
 --
-ALTER TABLE `pcutente`
-  ADD PRIMARY KEY (`cf`,`id`,`dataricerca`);
-
---
--- Indici per le tabelle `utente`
---
-ALTER TABLE `utente`
-  ADD PRIMARY KEY (`cf`);
-
---
--- Limiti per le tabelle scaricate
---
-
---
--- Limiti per la tabella `pcutente`
---
-ALTER TABLE `pcutente`
-  ADD CONSTRAINT `pcutente_ibfk_1` FOREIGN KEY (`cf`) REFERENCES `utente` (`cf`),
-  ADD CONSTRAINT `pcutente_ibfk_2` FOREIGN KEY (`id`) REFERENCES `pc` (`id`);
+ALTER TABLE `pc`
+  ADD PRIMARY KEY (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
