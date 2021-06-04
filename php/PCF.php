@@ -19,20 +19,19 @@
     </head>
     <body>
         <!--Sezione superiore-->
-        <div class="top">
+        <header>
             <!-- Icona -->
-            <img src="../LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/>
-        <!--Area utente-->
-            <!-- sezione ricerca -->
-            <form action="pc.php" method="get">
-                <div class="sezionericerca">
-                    <input type="text" id="barraricerca" placeholder="Cerca Pc"/>
-                    <input type="hidden" name="Cerca">
-                </div>
-            </form>
-        </div>
-        <!--Realizzazione della zona di ricerca di pc desktop e portatili-->
-        <!-- bottoni riga -->
+            <a href="../index.html"><img src="../LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/></a>
+            <div class="sezionericerca">
+                <form action=" pc.php" method="POST">
+                        <input type="text" name="marca" id="barraricerca" placeholder="Cerca Pc per marca "/>
+                        <input type="hidden" name="send">
+                        <input type="submit" name="send" id="buttonsearch">
+                </form>
+            </div>
+        </header>
+        
+        <!-- connesione -->
         
         <?php
             $host='localhost'; 
@@ -60,7 +59,7 @@
                             ?>
                             <div class="comparazione">
                                 <br>
-                                <img src="<?php echo $row['immagine']?>" id="comparaimage"/><br>
+                                <img src="<?php echo $row['immagine']?>"/><br>
                                 <div id="caratteristica" style="margin-left:200px;"><?php echo $row['prezzo']?> €</div>
                                 <div id="caratteristica">Marca: <?php echo $row['marca']?></div>
                                 <div id="caratteristica">Modello: <?php echo $row['modello']?></div>
@@ -96,12 +95,12 @@
             }
         ?>
         <footer>
-            <ul>
-                <a href="chisiamo.html"><li>Chi siamo</li></a>
-                <a href="cosePCF.html"><li>Cos'è PCF</li></a>
-                <a href="privacy.html"><li>Informativa sulla privacy</li></a>
-                <a href="terminiuso.html"><li>Termini d'uso</li></a>
-            </ul>
+        <ul>
+                    <a href="documenti/chisiamo.html" target="_blank"><li>Chi siamo</li></a>
+                    <a href="documenti/cosepcf.pdf" target="_blank"><li>Cos'&#232 PCF</li></a>
+                    <a href="documenti/privacy.html" target="_blank"><li>Informativa sulla privacy</li></a>
+                    <a href="documenti/terminiuso.html" target="_blank"><li>Termini d'uso</li></a>
+                </ul>
         </footer>
 </body>
 </html>
