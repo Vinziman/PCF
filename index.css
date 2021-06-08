@@ -1,6 +1,15 @@
-/* header img{
-
-} */
+p{
+    position: absolute;
+    left:30%;
+    right: 30%;
+    top:33%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+h2{
+    text-align: center;
+}
 #logo{
     position: fixed;
     width:44%;
@@ -8,39 +17,61 @@
     left:28%;
 }
 .ricerca{
-    left:34%;
-    top:34%;
-    width: 32%;
+    left:30%;
+    right: 30%;
+    top:40%;
+    width: 40%;
     position: absolute;
 }
 #barraricerca{
     position: absolute;
     left:0;
-    border-radius: 8px;
+    border-radius: 20px;
     height: 35px;
-    width: 70%;
-    border: 2px ridge rgb(202, 202, 202);
+    width: 100%;
+    border:none;
     background-color: white;
     font-weight: bold;
 }
 #buttonricerca{
     position: absolute;
-    right: 0;
-    border-radius: 8px;
+    left:87%;
+    border:none;
     height: 35px;
     width: 20%;
-    border: 2px ridge rgb(202, 202, 202);
-    background-color: white;
-    font-weight: bold;
+    background: none;
 }
 #buttonsito{
     top:29%;
     position: absolute;
     left:34%;
-    border-radius: 8px;
+    border-radius: 15px;
     height: 35px;
     width: 32%;
     border: 2px ridge rgb(202, 202, 202);
     background-color: white;
     font-weight: bold;
+    border-color: #085394;
+}
+#buttonricerca img{
+    margin-top: 0px;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    background: none;
+}
+.sezioni{
+    position: absolute;
+    top:50%;
+    left:20px;
+    right: 20px;
+}
+#box{
+    margin-left:1.5px;
+    width: 32.7%;
+    height: 280px;
+    border-radius: 15px;
+    display: inline-grid;
+    background: white;
+    border: 2px ridge #085394;
 }

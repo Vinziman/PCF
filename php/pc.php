@@ -24,8 +24,8 @@
             <!-- sezione ricerca -->
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                 <div class="sezionericerca">
-                    <input type="text" name="marca" id="barraricerca" placeholder="Cerca Pc"/>
-                    <input type="submit" name="send" id="buttonsearch">
+                    <input type="text" name="marca" id="barraricerca" placeholder="Cerca Pc per marca" style="height: 41px; width:81%;"/>
+                    <button id="buttonsearch"><img src="../LOGHI/lente.png"></button>
                     <input type="hidden" name="send">
                 </div>
             </form>
@@ -83,10 +83,10 @@
                 </div>
             </form>
         </div>
-        <form action="PCF.php" method="GET" target="_blank">
+        <form action="PCF.php" method="POST" target="_blank">
             <input type="hidden"  id="compara" name="invio">
-            <p>Confronta:</p>
-            <input type="submit"  id="compara" name="invio">
+            <button id="comparabutton"><img src="../LOGHI/vs.png"></button>
+            <input type="reset"  id="reset" name="reset" value="Resetta selezione">
             <div class="areapc">
                 <?php 
                 /*connessione al db*/
@@ -221,9 +221,25 @@
                             order by marca asc";
                     }
                     $query=mysqli_query($conn, $select);
-                    
+                    $count=0;
                     if(mysqli_num_rows($query)!=0){
                             while($row = mysqli_fetch_array($query)){
+                                if($count==0){
+                                    $count++;
+                                    ?>
+                                    <div class="pc1">
+                                    <img src="<?php echo $row["immagine"] ?>" alt="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["cpu"]." ".$row["ram"]?>GB<?php echo " ".$row["capienza"]?>GB" id="pcimage"/>
+                                    <input type="checkbox" name="selection[]" value="<?php echo $row['id'] ?>">   
+                                    <div id="pcdesc">
+                                        <form action="schedatecnica.php" method="POST" target="_blank">
+                                            <input type="number" name="id" value="<?php echo $row["id"]?>" id="number">
+                                            <input type="submit" value="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["prezzo"]?>€" id="scheda">
+                                        </form>
+                                    </div>                                                         
+                                </div>
+                                <?php 
+                                }
+                                else{
                                 ?>
                                 <div class="pc">
                                     <img src="<?php echo $row["immagine"] ?>" alt="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["cpu"]." ".$row["ram"]?>GB<?php echo " ".$row["capienza"]?>GB" id="pcimage"/>
@@ -231,11 +247,12 @@
                                     <div id="pcdesc">
                                         <form action="schedatecnica.php" method="POST">
                                             <input type="number" name="id" value="<?php echo $row["id"]?>" id="number">
-                                            <input type="submit" value="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["prezzo"]?>€" id="scheda" >
+                                            <input type="submit" name="invio" value="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["prezzo"]?>€" id="scheda">
                                         </form>
                                     </div>                                                         
                                 </div> 
-                            <?php
+                                <?php
+                                }
                             }                 
                     }
                     mysqli_close($conn);
