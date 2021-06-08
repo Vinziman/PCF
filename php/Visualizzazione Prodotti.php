@@ -22,7 +22,7 @@
         <!--Sezione superiore contenente icona, area utente e barra di ricerca-->
         <header>
             <!-- Icona -->
-            <a href="index.html"><img src="LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/></a>
+            <a href="../index.html"><img src="LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/></a>
             <!-- sezione ricerca -->
             <div class="sezionericerca">
                 <form action="php/pc.php" method="POST">
