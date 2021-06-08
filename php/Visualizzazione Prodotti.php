@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>PcFinder</title>
-        <link rel="stylesheet" href="base.css">
+        <link rel="stylesheet" href="../base.css">
         <!-- overwrider della barra di scroll laterale-->
         <style>
             ::-webkit-scrollbar {
@@ -22,19 +22,19 @@
         <!--Sezione superiore contenente icona, area utente e barra di ricerca-->
         <header>
             <!-- Icona -->
-            <a href="../index.html"><img src="LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/></a>
+            <a href="../index.html"><img src="../LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/></a>
             <!-- sezione ricerca -->
             <div class="sezionericerca">
                 <form action="php/pc.php" method="POST">
                         <input type="text" name="marca" id="barraricerca" placeholder="Cerca Pc per marca "/>
                         <input type="hidden" name="send">
-                        <button id="buttonsearch"><img src="LOGHI/lente.png"></button>
+                        <button id="buttonsearch"><img src="../LOGHI/lente.png"></button>
                 </form>
             </div>
         </header>
         <!--Scelta dei filtri-->
         <div class="filtri">
-            <form action="php/pc.php" method="POST"> 
+            <form action="pc.php" method="POST"> 
                 <div id="specifiche">
                     <div id="specifica">Tipologia</div>
                     <input type="radio" name="tipologia" value="portatile">Portatile<br>
@@ -85,9 +85,9 @@
             </form>
         </div>
         <!--zona visualizzazione pc-->
-        <form action="php/PCF.php" method="POST" target="_blank">
+        <form action="PCF.php" method="POST" target="_blank">
             <input type="hidden"  id="compara" name="invio">
-            <button id="comparabutton"><img src="LOGHI/vs.png"></button>
+            <button id="comparabutton"><img src="../LOGHI/vs.png"></button>
             <input type="reset"  id="reset" name="reset" value="Resetta selezione">
             <div class="areapc">
                 <?php
@@ -137,7 +137,7 @@
                                         <img src="<?php echo $row["immagine"] ?>" alt="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["cpu"]." ".$row["ram"]?>GB<?php echo " ".$row["capienza"]?>GB" id="pcimage"/>
                                         <input type="checkbox" name="selection[]" value="<?php echo $row['id'] ?>">   
                                         <div id="pcdesc">
-                                            <form action="php/schedatecnica.php" method="POST">
+                                            <form action="schedatecnica.php" method="POST">
                                                 <input type="number" name="id" value="<?php echo $row["id"]?>" id="number">
                                                 <input type="submit" name="invio" value="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["prezzo"]?>€" id="scheda">
                                             </form>
