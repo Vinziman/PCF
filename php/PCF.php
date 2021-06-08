@@ -26,13 +26,13 @@
                 <form action=" pc.php" method="POST">
                         <input type="text" name="marca" id="barraricerca" placeholder="Cerca Pc per marca "/>
                         <input type="hidden" name="send">
-                        <input type="submit" name="send" id="buttonsearch">
+                        <button id="buttonsearch"><img src="../LOGHI/lente.png"></button>
                 </form>
             </div>
         </header>
         
         <!-- connesione -->
-        
+        <br><br>
         <?php
             $host='localhost'; 
             $user='root';
@@ -42,13 +42,14 @@
             $conn = mysqli_connect($host, $user, $psw);
 
             $selectdb = mysqli_select_db($conn,$db);
-            $n=count($_GET['selection']);
+            
+            $n=count($_POST['selection']);
             if($n>3){
                 echo "Errore,siamo spiacenti il sito al momento può supportore solo 3 pc in comparazione la preghiamo di tornare alla pagina precedente,";
             }
             else{
-                if(!empty($_GET['selection'])) {
-                    foreach($_GET['selection'] as $check) {
+                if(!empty($_POST['selection'])) {
+                    foreach($_POST['selection'] as $check) {
                         $select="SELECT *
                                 FROM pc
                                 WHERE id='$check'";

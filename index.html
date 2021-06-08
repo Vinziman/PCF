@@ -22,13 +22,18 @@
     <body>
         <a href="index.html"><img src="LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/></a>
         <!--Sezione superiore contenente icona-->
-        <a href="PCF.html"><button type="submit" value="hai rotto le palle, il 4 si consegna" id="buttonsito">Vai</button></a>
+        <a href="homepage.php"><button type="submit" id="buttonsito">Visualizza computer consigliati</button></a>
         <p>Oppure</p>
         <form action="php/pc.php" method="POST" class="ricerca">
             <input type="text" name="marca" id="barraricerca">
-            <input type="submit" value="vai" name="send" id="buttonricerca">
+            <button id="buttonricerca"><img src="LOGHI/lente.png"></button>
             <input type="hidden" name="send">
         </form>
+        <div class="sezioni">
+            <div id="box"><h2>Cerca</h2></div>
+            <div id="box"><h2>Confronta</h2></div>
+            <div id="box"><h2>Acquista</h2></div>
+        </div>
         <footer>
                 <ul>
                     <a href="documenti/chisiamo.html" target="_blank"><li>Chi siamo</li></a>

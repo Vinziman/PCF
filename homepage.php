@@ -28,7 +28,7 @@
                 <form action="php/pc.php" method="POST">
                         <input type="text" name="marca" id="barraricerca" placeholder="Cerca Pc per marca "/>
                         <input type="hidden" name="send">
-                        <input type="submit" name="send" id="buttonsearch">
+                        <button id="buttonsearch"><img src="LOGHI/lente.png"></button>
                 </form>
             </div>
         </header>
@@ -85,8 +85,72 @@
             </form>
         </div>
         <!--zona visualizzazione pc-->
-        <div class="areapc">
-        </div>
+        <form action="php/PCF.php" method="POST" target="_blank">
+            <input type="hidden"  id="compara" name="invio">
+            <button id="comparabutton"><img src="LOGHI/vs.png"></button>
+            <input type="reset"  id="reset" name="reset" value="Resetta selezione">
+            <div class="areapc">
+                <?php
+                $host='localhost'; 
+                $user='root';
+                $psw='';
+                $db='pcf';
+
+                $conn = mysqli_connect($host, $user, $psw);
+
+                $selectdb = mysqli_select_db($conn,$db);
+                $id1=rand(1,60);
+                $id2=rand(1,60);
+                $id3=rand(1,60);
+                $id4=rand(1,60);
+                $id5=rand(1,60);
+                $id6=rand(1,60);
+                $id7=rand(1,60);
+
+                $select="SELECT *
+                        FROM pc
+                        WHERE id=36 or id='$id2' or id='$id3' or id='$id4' or id='$id5' or id='$id6' or id='$id7'
+                        order by marca asc";
+                        $count=0;
+                        $query=mysqli_query($conn, $select);
+                        if(mysqli_num_rows($query)!=0){
+                            while($row = mysqli_fetch_array($query)){
+                                while($row = mysqli_fetch_array($query)){
+                                    if($count==0){
+                                        $count++;
+                                        ?>
+                                        <div class="pc1">
+                                        <img src="<?php echo $row["immagine"] ?>" alt="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["cpu"]." ".$row["ram"]?>GB<?php echo " ".$row["capienza"]?>GB" id="pcimage"/>
+                                        <input type="checkbox" name="selection[]" value="<?php echo $row['id'] ?>">   
+                                        <div id="pcdesc">
+                                            <form action="schedatecnica.php" method="POST" target="_blank">
+                                                <input type="number" name="id" value="<?php echo $row["id"]?>" id="number">
+                                                <input type="submit" value="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["prezzo"]?>€" id="scheda">
+                                            </form>
+                                        </div>                                                         
+                                    </div>
+                                    <?php 
+                                    }
+                                    else{
+                                    ?>
+                                    <div class="pc">
+                                        <img src="<?php echo $row["immagine"] ?>" alt="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["cpu"]." ".$row["ram"]?>GB<?php echo " ".$row["capienza"]?>GB" id="pcimage"/>
+                                        <input type="checkbox" name="selection[]" value="<?php echo $row['id'] ?>">   
+                                        <div id="pcdesc">
+                                            <form action="php/schedatecnica.php" method="POST">
+                                                <input type="number" name="id" value="<?php echo $row["id"]?>" id="number">
+                                                <input type="submit" name="invio" value="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["prezzo"]?>€" id="scheda">
+                                            </form>
+                                        </div>                                                         
+                                    </div> 
+                                    <?php
+                                    }
+                                }
+                            }
+                        }
+                ?>
+            </div>
+        </form>
         <footer>
             <ul>
                 <a href="documenti/chisiamo.html" target="_blank"><li>Chi siamo</li></a>
