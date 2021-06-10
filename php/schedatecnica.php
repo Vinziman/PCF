@@ -22,7 +22,7 @@
         <a href="../index.html"><img src="../LOGHI/LOGO_PCF_SITO_NOSFONDO.PNG" id="logo"/></a>
             <div class="sezionericerca">
                 <form action=" pc.php" method="POST">
-                        <input type="text" name="marca" id="barraricerca" placeholder="Cerca Pc per marca "/>
+                        <input type="text" name="marca" id="barraricerca" placeholder="Digita qui la marca del pc da ricercare"/>
                         <input type="hidden" name="send">
                         <button id="buttonsearch"><img src="../LOGHI/lente.png"></button>
                 </form>

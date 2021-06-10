@@ -24,7 +24,7 @@
             <!-- sezione ricerca -->
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                 <div class="sezionericerca">
-                    <input type="text" name="marca" id="barraricerca" placeholder="Cerca Pc per marca" style="height: 41px; width:81%;"/>
+                    <input type="text" name="marca" id="barraricerca" placeholder="Digita qui la marca del pc da ricercare" style="height: 41px; width:81%;"/>
                     <button id="buttonsearch"><img src="../LOGHI/lente.png"></button>
                     <input type="hidden" name="send">
                 </div>
@@ -222,6 +222,7 @@
                     }
                     $query=mysqli_query($conn, $select);
                     $count=0;
+                    /*caricamento dei pc secondo il filtraggio*/
                     if(mysqli_num_rows($query)!=0){
                             while($row = mysqli_fetch_array($query)){
                                 if($count==0){
@@ -245,7 +246,7 @@
                                     <img src="<?php echo $row["immagine"] ?>" alt="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["cpu"]." ".$row["ram"]?>GB<?php echo " ".$row["capienza"]?>GB" id="pcimage"/>
                                     <input type="checkbox" name="selection[]" value="<?php echo $row['id'] ?>">   
                                     <div id="pcdesc">
-                                        <form action="schedatecnica.php" method="POST">
+                                        <form action="schedatecnica.php" method="POST" target="_blank">
                                             <input type="number" name="id" value="<?php echo $row["id"]?>" id="number">
                                             <input type="submit" name="invio" value="<?php echo $row["marca"]. " " .$row["modello"]." ".$row["prezzo"]?>€" id="scheda">
                                         </form>

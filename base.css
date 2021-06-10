@@ -272,3 +272,11 @@ margin-left: 10px;;
     color: white;
 
 }
+#errore{
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top:33%;
+    left:25%;
+    right: 25%;
+}
